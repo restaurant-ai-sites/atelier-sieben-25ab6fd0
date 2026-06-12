@@ -33,6 +33,7 @@
   "images": {
     "food": "/images/food_3.webp",
     "interior": "/images/interior_1.webp",
+    "menu": "/images/menu_4.webp",
     "hero": "/images/hero_generated.webp"
   },
   "features": {
