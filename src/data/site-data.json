@@ -1,0 +1,48 @@
+{
+  "restaurant": {
+    "name": "Atelier Sieben",
+    "tagline": "Genussvolle Momente im Atelier Sieben",
+    "about": "Im Atelier Sieben erleben Sie die Faszination der modernen europäischen Küche. Unser Restaurant in der Auguststraße 7, Berlin, bietet Ihnen saisonale Degustationsmenüs, die nicht nur geschmacklich überzeugen, sondern auch als visuelle Kunstwerke präsentiert werden. Lassen Sie sich von unserem kreativen Küchenteam verwöhnen und genießen Sie unvergessliche Abende in einem stilvollen Ambiente. Wir freuen uns darauf, Sie bei uns willkommen zu heißen.",
+    "phone": "030 9988 7766",
+    "email": "kontakt@atelier-sieben.de",
+    "address": "Auguststraße 7, 10117 Berlin",
+    "openingHours": {
+      "Montag": "Ruhetag",
+      "Dienstag": "Ruhetag",
+      "Mittwoch": "18:30-23:00",
+      "Donnerstag": "18:30-23:00",
+      "Freitag": "18:30-23:00",
+      "Samstag": "18:30-23:00",
+      "Sonntag": "Ruhetag"
+    },
+    "cuisine": "Moderne Europäische Küche",
+    "priceRange": "mid"
+  },
+  "seo": {
+    "title": "Atelier Sieben - Modern Europäische Küche in Berlin",
+    "description": "Entdecken Sie im Atelier Sieben saisonale Menüs und visuelle Kunstwerke in der modernen europäischen Küche. Besuchen Sie uns in Berlin!"
+  },
+  "content": {
+    "welcomeHeading": "Willkommen im Atelier Sieben",
+    "welcomeSubtext": "Genießen Sie exquisite Speisen in stilvollem Ambiente.",
+    "reservationCta": "Jetzt Tisch reservieren",
+    "orderCta": "Bestellen Sie Ihr Menü",
+    "contactHeading": "Kontaktieren Sie uns",
+    "footerText": "Ihr Genussmoment im Atelier Sieben."
+  },
+  "images": {
+    "food": "/images/food_3.webp",
+    "interior": "/images/interior_1.webp",
+    "hero": "/images/hero_generated.webp"
+  },
+  "features": {
+    "hasReservation": false,
+    "hasOrdering": false,
+    "paypalClientId": ""
+  },
+  "menu": [],
+  "legal": {
+    "impressum": "## Impressum\n\n**Angaben gemäß § 5 TMG**\n\nAtelier Sieben\nAuguststraße 7, 10117 Berlin\n030 9988 7766\nkontakt@atelier-sieben.de\n\n**Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:**\nAtelier Sieben\n\n**Haftungsausschluss:**\nDie Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.\n\n**Urheberrecht:**\nDie durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.\n",
+    "datenschutz": "## Datenschutzerklärung\n\n**1. Datenschutz auf einen Blick**\n\nDiese Datenschutzerklärung klärt Sie über die Art, den Umfang und Zweck der Verarbeitung von personenbezogenen Daten auf unserer Website auf.\n\n**2. Verantwortliche Stelle**\n\nAtelier Sieben\nAuguststraße 7, 10117 Berlin\nE-Mail: kontakt@atelier-sieben.de\n\n**3. Erhebung und Speicherung personenbezogener Daten**\n\nBeim Besuch unserer Website werden automatisch Informationen allgemeiner Natur erfasst (Server-Log-Dateien). Diese Daten erlauben keine Rückschlüsse auf Ihre Person.\n\n**4. Kontaktformular**\n\nWenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen gespeichert.\n\n**5. Cookies**\n\nUnsere Website verwendet Cookies. Durch die Nutzung unserer Website erklären Sie sich damit einverstanden.\n\n**6. Ihre Rechte**\n\nSie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung oder Einschränkung der Verarbeitung Ihrer gespeicherten personenbezogenen Daten.\n\n**7. Kontakt Datenschutzbeauftragter**\n\nBei Fragen zum Datenschutz wenden Sie sich an: kontakt@atelier-sieben.de\n"
+  }
+}
