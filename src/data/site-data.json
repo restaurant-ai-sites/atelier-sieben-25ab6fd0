@@ -23,12 +23,12 @@
     "description": "Entdecken Sie im Atelier Sieben saisonale Menüs und visuelle Kunstwerke in der modernen europäischen Küche. Besuchen Sie uns in Berlin!"
   },
   "content": {
-    "welcomeHeading": "Willkommen im Atelier Sieben",
-    "welcomeSubtext": "Genießen Sie exquisite Speisen in stilvollem Ambiente.",
-    "reservationCta": "Jetzt Tisch reservieren",
-    "orderCta": "Bestellen Sie Ihr Menü",
-    "contactHeading": "Kontaktieren Sie uns",
-    "footerText": "Ihr Genussmoment im Atelier Sieben."
+    "welcomeHeading": "",
+    "welcomeSubtext": "",
+    "reservationCta": "Tisch reservieren",
+    "orderCta": "Jetzt bestellen",
+    "contactHeading": "Kontakt",
+    "footerText": ""
   },
   "images": {
     "food": "/images/food_3.webp",
