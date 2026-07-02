@@ -1,8 +1,8 @@
 {
   "restaurant": {
     "name": "Atelier Sieben",
-    "tagline": "Genussvolle Momente im Atelier Sieben",
-    "about": "Willkommen im Atelier Sieben, Ihrem neuen Lieblingsort für kulinarische Erlebnisse. Unser Restaurant vereint kreative Küche mit einem einladenden Ambiente. Wir legen großen Wert auf frische, regionale Zutaten und bieten Ihnen eine abwechslungsreiche Speisekarte, die sowohl traditionelle als auch moderne Gerichte umfasst. Lassen Sie sich von unserem freundlichen Team verwöhnen und genießen Sie unvergessliche Momente in stilvollem Rahmen. Besuchen Sie uns und erleben Sie, wie Genuss und Gastfreundschaft harmonisch miteinander verschmelzen.",
+    "tagline": "Kreative Küche im Herzen der Stadt",
+    "about": "Willkommen im Atelier Sieben, wo Kulinarik auf Kunst trifft. Unser Restaurant bietet eine einzigartige Mischung aus regionalen und internationalen Gerichten, die mit frischen, saisonalen Zutaten zubereitet werden. In einem stilvollen Ambiente laden wir Sie ein, unvergessliche Geschmackserlebnisse zu entdecken. Unser engagiertes Team legt großen Wert auf Qualität und Gastfreundschaft, um Ihnen einen perfekten Abend zu bereiten. Besuchen Sie uns und lassen Sie sich von unserer Leidenschaft für gutes Essen begeistern.",
     "phone": "",
     "email": "",
     "address": "",
@@ -11,22 +11,24 @@
     "priceRange": "mid"
   },
   "seo": {
-    "title": "Atelier Sieben – Kulinarische Erlebnisse",
-    "description": "Entdecken Sie das Atelier Sieben – Ihr Restaurant für kreative Küche und unvergessliche Genussmomente."
+    "title": "Atelier Sieben – Kreative Küche erleben",
+    "description": "Entdecken Sie kreative Gerichte im Atelier Sieben. Genießen Sie frische, saisonale Küche in einem einladenden Ambiente."
   },
   "content": {
-    "welcomeHeading": "",
-    "welcomeSubtext": "",
-    "reservationCta": "Tisch reservieren",
-    "orderCta": "Jetzt bestellen",
-    "contactHeading": "Kontakt",
-    "footerText": ""
+    "welcomeHeading": "Herzlich Willkommen im Atelier Sieben",
+    "welcomeSubtext": "Genießen Sie exquisite Speisen und erlesene Weine.",
+    "reservationCta": "Jetzt Tisch reservieren",
+    "orderCta": "Bestellen Sie jetzt online",
+    "contactHeading": "Kontaktieren Sie uns",
+    "footerText": "Ihr Genuss ist unser Anliegen."
   },
   "images": {
     "food": "/images/food_3.webp",
     "interior": "/images/interior_1.webp",
     "menu": "/images/menu_4.webp",
-    "hero": "/images/hero_generated.webp"
+    "hero": "/images/hero_generated.webp",
+    "gallery_1": "https://eqrjtsqkfaigpsyfpehl.supabase.co/storage/v1/object/public/site-images/25ab6fd0-09ea-49a9-9e18-eac2aafc18ba/gallery_1-1783028077566.png",
+    "about": "https://eqrjtsqkfaigpsyfpehl.supabase.co/storage/v1/object/public/site-images/25ab6fd0-09ea-49a9-9e18-eac2aafc18ba/about-1783028090777.png"
   },
   "features": {
     "hasReservation": false,
