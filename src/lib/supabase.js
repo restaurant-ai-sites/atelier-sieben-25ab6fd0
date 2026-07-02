@@ -1,6 +1,10 @@
+import { createClient } from "@supabase/supabase-js";
+
 const SB_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const SB_KEY = process.env.SUPABASE_SECRET_KEY;
 export const PROJECT_ID = process.env.NEXT_PUBLIC_PROJECT_ID;
+
+const supabase = createClient(SB_URL, SB_KEY);
 
 export async function sb(path, init = {}) {
   const res = await fetch(`${SB_URL}/rest/v1/${path}`, {
@@ -20,16 +24,10 @@ export async function sb(path, init = {}) {
 }
 
 export async function uploadToStorage(bucket, path, file) {
-  const arrayBuffer = await file.arrayBuffer();
-  const res = await fetch(`${SB_URL}/storage/v1/object/${bucket}/${path}`, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${SB_KEY}`,
-      "Content-Type": file.type || "application/octet-stream",
-      "x-upsert": "true",
-    },
-    body: arrayBuffer,
-  });
-  if (!res.ok) throw new Error(`Storage ${res.status}: ${await res.text()}`);
-  return `${SB_URL}/storage/v1/object/public/${bucket}/${path}`;
+  const { error } = await supabase.storage
+    .from(bucket)
+    .upload(path, file, { upsert: true, contentType: file.type || "application/octet-stream" });
+  if (error) throw new Error(`Storage ${error.status ?? ""}: ${error.message}`);
+  const { data } = supabase.storage.from(bucket).getPublicUrl(path);
+  return data.publicUrl;
 }

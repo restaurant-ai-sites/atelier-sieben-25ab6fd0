@@ -15,12 +15,12 @@
     "description": "Entdecken Sie das Atelier Sieben – Ihr Restaurant für kreative Küche und unvergessliche Genussmomente."
   },
   "content": {
-    "welcomeHeading": "Herzlich Willkommen im Atelier Sieben",
-    "welcomeSubtext": "Genießen Sie exquisite Speisen in stilvollem Ambiente.",
-    "reservationCta": "Jetzt Tisch reservieren",
-    "orderCta": "Bestellen Sie online",
-    "contactHeading": "Kontaktieren Sie uns",
-    "footerText": "Ihr Genuss ist unser Anspruch."
+    "welcomeHeading": "",
+    "welcomeSubtext": "",
+    "reservationCta": "Tisch reservieren",
+    "orderCta": "Jetzt bestellen",
+    "contactHeading": "Kontakt",
+    "footerText": ""
   },
   "images": {
     "food": "/images/food_3.webp",
