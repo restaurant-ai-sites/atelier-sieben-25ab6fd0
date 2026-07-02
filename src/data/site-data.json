@@ -1,8 +1,8 @@
 {
   "restaurant": {
     "name": "Atelier Sieben",
-    "tagline": "Kreative Küche im Herzen der Stadt",
-    "about": "Willkommen im Atelier Sieben, wo Kulinarik auf Kunst trifft. Unser Restaurant bietet eine einzigartige Mischung aus regionalen und internationalen Gerichten, die mit frischen, saisonalen Zutaten zubereitet werden. In einem stilvollen Ambiente laden wir Sie ein, unvergessliche Geschmackserlebnisse zu entdecken. Unser engagiertes Team legt großen Wert auf Qualität und Gastfreundschaft, um Ihnen einen perfekten Abend zu bereiten. Besuchen Sie uns und lassen Sie sich von unserer Leidenschaft für gutes Essen begeistern.",
+    "tagline": "Genussvolle Momente im Atelier Sieben",
+    "about": "Willkommen im Atelier Sieben, wo kulinarische Kreativität auf höchste Qualität trifft. Unser Restaurant bietet Ihnen eine einzigartige Auswahl an Gerichten, die mit frischen, saisonalen Zutaten zubereitet werden. Lassen Sie sich von unserem einladenden Ambiente und unserem freundlichen Service verwöhnen. Ob für ein romantisches Dinner, ein Familienfest oder geschäftliche Anlässe – bei uns sind Sie immer herzlich willkommen.",
     "phone": "",
     "email": "",
     "address": "",
@@ -11,16 +11,16 @@
     "priceRange": "mid"
   },
   "seo": {
-    "title": "Atelier Sieben – Kreative Küche erleben",
-    "description": "Entdecken Sie kreative Gerichte im Atelier Sieben. Genießen Sie frische, saisonale Küche in einem einladenden Ambiente."
+    "title": "Atelier Sieben – Kulinarische Erlebnisse",
+    "description": "Entdecken Sie das Atelier Sieben. Genießen Sie kreative Küche in einem einladenden Ambiente. Reservieren Sie jetzt Ihren Tisch!"
   },
   "content": {
     "welcomeHeading": "Herzlich Willkommen im Atelier Sieben",
-    "welcomeSubtext": "Genießen Sie exquisite Speisen und erlesene Weine.",
+    "welcomeSubtext": "Erleben Sie unvergessliche kulinarische Momente.",
     "reservationCta": "Jetzt Tisch reservieren",
-    "orderCta": "Bestellen Sie jetzt online",
+    "orderCta": "Speisekarte ansehen",
     "contactHeading": "Kontaktieren Sie uns",
-    "footerText": "Ihr Genuss ist unser Anliegen."
+    "footerText": "Wir freuen uns auf Ihren Besuch!"
   },
   "images": {
     "food": "/images/food_3.webp",
@@ -28,7 +28,12 @@
     "menu": "/images/menu_4.webp",
     "hero": "/images/hero_generated.webp",
     "gallery_1": "https://eqrjtsqkfaigpsyfpehl.supabase.co/storage/v1/object/public/site-images/25ab6fd0-09ea-49a9-9e18-eac2aafc18ba/gallery_1-1783028077566.png",
-    "about": "https://eqrjtsqkfaigpsyfpehl.supabase.co/storage/v1/object/public/site-images/25ab6fd0-09ea-49a9-9e18-eac2aafc18ba/about-1783028090777.png"
+    "about": "https://eqrjtsqkfaigpsyfpehl.supabase.co/storage/v1/object/public/site-images/25ab6fd0-09ea-49a9-9e18-eac2aafc18ba/about-1783028090777.png",
+    "gallery_2": "https://eqrjtsqkfaigpsyfpehl.supabase.co/storage/v1/object/public/site-images/25ab6fd0-09ea-49a9-9e18-eac2aafc18ba/gallery_2-1783032809196.png",
+    "gallery_3": "https://eqrjtsqkfaigpsyfpehl.supabase.co/storage/v1/object/public/site-images/25ab6fd0-09ea-49a9-9e18-eac2aafc18ba/gallery_3-1783032813545.png",
+    "gallery_4": "https://eqrjtsqkfaigpsyfpehl.supabase.co/storage/v1/object/public/site-images/25ab6fd0-09ea-49a9-9e18-eac2aafc18ba/gallery_4-1783032817647.jpg",
+    "gallery_5": "https://eqrjtsqkfaigpsyfpehl.supabase.co/storage/v1/object/public/site-images/25ab6fd0-09ea-49a9-9e18-eac2aafc18ba/gallery_5-1783032822578.png",
+    "speisekarte": "https://eqrjtsqkfaigpsyfpehl.supabase.co/storage/v1/object/public/site-images/25ab6fd0-09ea-49a9-9e18-eac2aafc18ba/speisekarte-1783032828436.jpg"
   },
   "features": {
     "hasReservation": false,

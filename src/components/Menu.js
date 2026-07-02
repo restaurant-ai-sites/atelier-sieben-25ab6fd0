@@ -8,8 +8,8 @@ async function getMenuData() {
   const headers = { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` };
   try {
     const [secRes, itemRes, imgRes] = await Promise.all([
-      fetch(`${SB_URL}/rest/v1/menu_sections?project_id=eq.${PROJECT_ID}&select=id,name,position&order=position.asc`, { headers, cache: "no-store" }),
-      fetch(`${SB_URL}/rest/v1/menu_items?project_id=eq.${PROJECT_ID}&select=id,section_id,name,description,price,position&order=position.asc`, { headers, cache: "no-store" }),
+      fetch(`${SB_URL}/rest/v1/menu_sections?project_id=eq.${PROJECT_ID}&select=id,name&order=created_at.asc`, { headers, cache: "no-store" }),
+      fetch(`${SB_URL}/rest/v1/menu_items?project_id=eq.${PROJECT_ID}&select=id,section_id,name,description,price&order=created_at.asc`, { headers, cache: "no-store" }),
       fetch(`${SB_URL}/rest/v1/site_images?project_id=eq.${PROJECT_ID}&image_key=eq.speisekarte&select=url`, { headers, cache: "no-store" }),
     ]);
     const secs = await secRes.json();

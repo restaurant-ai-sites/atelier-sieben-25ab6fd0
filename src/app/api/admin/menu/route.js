@@ -5,10 +5,10 @@ export async function GET(req) {
   if (!isAdmin(req)) return unauthorized();
   try {
     const sections = await sb(
-      `menu_sections?project_id=eq.${PROJECT_ID}&select=id,name,position&order=position.asc`
+      `menu_sections?project_id=eq.${PROJECT_ID}&select=id,name&order=created_at.asc`
     );
     const items = await sb(
-      `menu_items?project_id=eq.${PROJECT_ID}&select=id,section_id,name,description,price,position&order=position.asc`
+      `menu_items?project_id=eq.${PROJECT_ID}&select=id,section_id,name,description,price&order=created_at.asc`
     );
     const sectionList = (sections || []).map((s) => ({
       ...s,
@@ -29,12 +29,10 @@ export async function POST(req) {
     if (type === "section") {
       const { name } = body;
       if (!name) return Response.json({ error: "Name erforderlich" }, { status: 400 });
-      const existing = await sb(`menu_sections?project_id=eq.${PROJECT_ID}&select=position&order=position.desc&limit=1`);
-      const maxPos = existing?.[0]?.position ?? 0;
       const rows = await sb("menu_sections", {
         method: "POST",
         headers: { "Content-Type": "application/json", Prefer: "return=representation" },
-        body: JSON.stringify({ project_id: PROJECT_ID, name, position: maxPos + 1 }),
+        body: JSON.stringify({ project_id: PROJECT_ID, name }),
       });
       return Response.json({ section: rows?.[0] });
     }
@@ -42,12 +40,10 @@ export async function POST(req) {
     if (type === "item") {
       const { section_id, name, description, price } = body;
       if (!section_id || !name) return Response.json({ error: "section_id und name erforderlich" }, { status: 400 });
-      const existing = await sb(`menu_items?section_id=eq.${section_id}&select=position&order=position.desc&limit=1`);
-      const maxPos = existing?.[0]?.position ?? 0;
       const rows = await sb("menu_items", {
         method: "POST",
         headers: { "Content-Type": "application/json", Prefer: "return=representation" },
-        body: JSON.stringify({ project_id: PROJECT_ID, section_id, name, description: description || null, price: price || null, position: maxPos + 1 }),
+        body: JSON.stringify({ project_id: PROJECT_ID, section_id, name, description: description || null, price: price || null }),
       });
       return Response.json({ item: rows?.[0] });
     }
