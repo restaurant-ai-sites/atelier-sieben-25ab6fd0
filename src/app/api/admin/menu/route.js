@@ -5,11 +5,11 @@ export async function GET(req) {
   if (!isAdmin(req)) return unauthorized();
   try {
     const sections = await sb(
-      `menu_sections?project_id=eq.${PROJECT_ID}&select=id,name&order=created_at.asc`
-    );
+      `menu_sections?project_id=eq.${PROJECT_ID}&select=id,name`
+    ).catch(() => []);
     const items = await sb(
-      `menu_items?project_id=eq.${PROJECT_ID}&select=id,section_id,name,description,price&order=created_at.asc`
-    );
+      `menu_items?project_id=eq.${PROJECT_ID}&select=id,section_id,name,description,price`
+    ).catch(() => []);
     const sectionList = (sections || []).map((s) => ({
       ...s,
       items: (items || []).filter((i) => i.section_id === s.id),
@@ -31,7 +31,7 @@ export async function POST(req) {
       if (!name) return Response.json({ error: "Name erforderlich" }, { status: 400 });
       const rows = await sb("menu_sections", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Prefer: "return=representation" },
+        headers: { Prefer: "return=representation" },
         body: JSON.stringify({ project_id: PROJECT_ID, name }),
       });
       return Response.json({ section: rows?.[0] });
@@ -42,7 +42,7 @@ export async function POST(req) {
       if (!section_id || !name) return Response.json({ error: "section_id und name erforderlich" }, { status: 400 });
       const rows = await sb("menu_items", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Prefer: "return=representation" },
+        headers: { Prefer: "return=representation" },
         body: JSON.stringify({ project_id: PROJECT_ID, section_id, name, description: description || null, price: price || null }),
       });
       return Response.json({ item: rows?.[0] });
@@ -62,7 +62,7 @@ export async function DELETE(req) {
   if (!id || !type) return Response.json({ error: "id und type erforderlich" }, { status: 400 });
   try {
     if (type === "section") {
-      await sb(`menu_items?section_id=eq.${id}`, { method: "DELETE" });
+      await sb(`menu_items?section_id=eq.${id}`, { method: "DELETE" }).catch(() => null);
       await sb(`menu_sections?id=eq.${id}`, { method: "DELETE" });
     } else if (type === "item") {
       await sb(`menu_items?id=eq.${id}`, { method: "DELETE" });

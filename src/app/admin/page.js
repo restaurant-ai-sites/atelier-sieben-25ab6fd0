@@ -184,7 +184,9 @@ function SpeisenkarteTab({ adminKey }) {
     try {
       const d = await api("/api/admin/menu", adminKey);
       setSections(d.sections || []);
-    } catch { /* ignore */ }
+    } catch (e) {
+      setMsg("Ladefehler: " + e.message);
+    }
     setLoading(false);
   }
 

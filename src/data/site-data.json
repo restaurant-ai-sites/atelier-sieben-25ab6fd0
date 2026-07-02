@@ -15,20 +15,20 @@
     "description": "Entdecken Sie das Atelier Sieben. Genießen Sie kreative Küche in einem einladenden Ambiente. Reservieren Sie jetzt Ihren Tisch!"
   },
   "content": {
-    "welcomeHeading": "Herzlich Willkommen im Atelier Sieben",
-    "welcomeSubtext": "Erleben Sie unvergessliche kulinarische Momente.",
-    "reservationCta": "Jetzt Tisch reservieren",
-    "orderCta": "Speisekarte ansehen",
-    "contactHeading": "Kontaktieren Sie uns",
-    "footerText": "Wir freuen uns auf Ihren Besuch!"
+    "welcomeHeading": "",
+    "welcomeSubtext": "",
+    "reservationCta": "Tisch reservieren",
+    "orderCta": "Jetzt bestellen",
+    "contactHeading": "Kontakt",
+    "footerText": ""
   },
   "images": {
     "food": "/images/food_3.webp",
     "interior": "/images/interior_1.webp",
     "menu": "/images/menu_4.webp",
     "hero": "/images/hero_generated.webp",
-    "gallery_1": "https://eqrjtsqkfaigpsyfpehl.supabase.co/storage/v1/object/public/site-images/25ab6fd0-09ea-49a9-9e18-eac2aafc18ba/gallery_1-1783028077566.png",
     "about": "https://eqrjtsqkfaigpsyfpehl.supabase.co/storage/v1/object/public/site-images/25ab6fd0-09ea-49a9-9e18-eac2aafc18ba/about-1783028090777.png",
+    "gallery_1": "https://eqrjtsqkfaigpsyfpehl.supabase.co/storage/v1/object/public/site-images/25ab6fd0-09ea-49a9-9e18-eac2aafc18ba/gallery_1-1783028077566.png",
     "gallery_2": "https://eqrjtsqkfaigpsyfpehl.supabase.co/storage/v1/object/public/site-images/25ab6fd0-09ea-49a9-9e18-eac2aafc18ba/gallery_2-1783032809196.png",
     "gallery_3": "https://eqrjtsqkfaigpsyfpehl.supabase.co/storage/v1/object/public/site-images/25ab6fd0-09ea-49a9-9e18-eac2aafc18ba/gallery_3-1783032813545.png",
     "gallery_4": "https://eqrjtsqkfaigpsyfpehl.supabase.co/storage/v1/object/public/site-images/25ab6fd0-09ea-49a9-9e18-eac2aafc18ba/gallery_4-1783032817647.jpg",
