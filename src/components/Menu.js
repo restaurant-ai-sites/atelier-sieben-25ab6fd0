@@ -1,27 +1,7 @@
-import siteData from "../data/site-data.json";
+"use client";
 
-async function getMenuData() {
-  const SB_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const SB_KEY = process.env.SUPABASE_SECRET_KEY;
-  const PROJECT_ID = process.env.NEXT_PUBLIC_PROJECT_ID;
-  if (!SB_URL || !SB_KEY || !PROJECT_ID) return { sections: null, speisekarte: null };
-  const headers = { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` };
-  try {
-    const [secRes, itemRes, imgRes] = await Promise.all([
-      fetch(`${SB_URL}/rest/v1/menu_sections?project_id=eq.${PROJECT_ID}&select=id,name&order=created_at.asc`, { headers, cache: "no-store" }),
-      fetch(`${SB_URL}/rest/v1/menu_items?project_id=eq.${PROJECT_ID}&select=id,section_id,name,description,price&order=created_at.asc`, { headers, cache: "no-store" }),
-      fetch(`${SB_URL}/rest/v1/site_images?project_id=eq.${PROJECT_ID}&image_key=eq.speisekarte&select=url`, { headers, cache: "no-store" }),
-    ]);
-    const secs = await secRes.json();
-    const items = await itemRes.json();
-    const imgs = await imgRes.json();
-    const sections = (secs || []).length > 0
-      ? (secs || []).map((s) => ({ ...s, items: (items || []).filter((i) => i.section_id === s.id) }))
-      : null;
-    const speisekarte = imgs?.[0]?.url || null;
-    return { sections, speisekarte };
-  } catch { return { sections: null, speisekarte: null }; }
-}
+import { useState, useEffect } from "react";
+import siteData from "../data/site-data.json";
 
 function MenuItem({ item }) {
   if (typeof item === "string") return <li className="py-2">{item}</li>;
@@ -36,10 +16,32 @@ function MenuItem({ item }) {
   );
 }
 
-export default async function Menu() {
-  const { sections: dbSections, speisekarte } = await getMenuData();
-  const sections = dbSections ?? (Array.isArray(siteData.menu) ? siteData.menu : []);
-  const foodImage = speisekarte || siteData.images?.food;
+export default function Menu() {
+  const [sections, setSections] = useState([]);
+  const [speisekarte, setSpeisekarte] = useState(null);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/menu")
+      .then((r) => r.json())
+      .then((data) => {
+        setSpeisekarte(data.speisekarte || null);
+        setSections(
+          data.sections?.length > 0
+            ? data.sections
+            : Array.isArray(siteData.menu) ? siteData.menu : []
+        );
+        setLoaded(true);
+      })
+      .catch(() => {
+        setSections(Array.isArray(siteData.menu) ? siteData.menu : []);
+        setLoaded(true);
+      });
+  }, []);
+
+  if (!loaded) return null;
+
+  const foodImage = speisekarte || siteData.images?.speisekarte || siteData.images?.food;
 
   if (sections.length === 0 && !foodImage) return null;
 
