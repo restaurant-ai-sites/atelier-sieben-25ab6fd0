@@ -1,8 +1,8 @@
-import { Fraunces, Source_Sans_3 } from "next/font/google";
+import { Playfair_Display, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import siteData from "../data/site-data.json";
 
-const displayFont = Fraunces({
+const displayFont = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-display",
 });

@@ -1,10 +1,31 @@
 import siteData from "../data/site-data.json";
 
-export default function Hero() {
-  const { restaurant, content, images } = siteData;
+async function getImageOverrides() {
+  const SB_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const SB_KEY = process.env.SUPABASE_SECRET_KEY;
+  const PROJECT_ID = process.env.NEXT_PUBLIC_PROJECT_ID;
+  if (!SB_URL || !SB_KEY || !PROJECT_ID) return {};
+  try {
+    const res = await fetch(
+      `${SB_URL}/rest/v1/site_images?project_id=eq.${PROJECT_ID}&select=image_key,url`,
+      { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` }, cache: "no-store" }
+    );
+    const rows = await res.json();
+    const map = {};
+    (rows || []).forEach((r) => { map[r.image_key] = r.url; });
+    return map;
+  } catch {
+    return {};
+  }
+}
+
+export default async function Hero() {
+  const { restaurant, content, images: defaultImages } = siteData;
+  const overrides = await getImageOverrides();
+  const images = { ...defaultImages, ...overrides };
 
   return (
-    <section className="relative flex min-h-screen items-end overflow-hidden">
+    <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
       {images.hero ? (
         <>
           <img
@@ -12,29 +33,30 @@ export default function Hero() {
             alt={restaurant.name}
             className="absolute inset-0 h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-coffee/55" />
         </>
       ) : (
         <div className="absolute inset-0 bg-gradient-to-br from-coffee via-terradark to-terra" />
       )}
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-20 pt-40">
-        <p className="text-sm uppercase tracking-[0.35em] text-white/70">
-          {restaurant.cuisine || restaurant.tagline}
+      <div className="relative z-10 mx-auto max-w-3xl px-4 py-24 text-center text-cream">
+        <p className="mb-3 text-sm uppercase tracking-[0.3em] text-sand">
+          {restaurant.cuisine && `${restaurant.cuisine} · `}
+          {restaurant.tagline}
         </p>
-        <h1 className="mt-4 max-w-4xl font-display text-6xl font-bold leading-[0.95] text-white sm:text-8xl">
+        <h1 className="font-display text-4xl font-bold leading-tight sm:text-6xl">
           {content.welcomeHeading || restaurant.name}
         </h1>
         {content.welcomeSubtext && (
-          <p className="mt-6 max-w-xl text-xl text-white/85">
+          <p className="mx-auto mt-5 max-w-xl text-lg text-cream/90">
             {content.welcomeSubtext}
           </p>
         )}
         <a
           href="#speisekarte"
-          className="mt-10 inline-block bg-terra px-10 py-4 text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-terradark"
+          className="mt-8 inline-block rounded-full bg-terra px-8 py-3 font-semibold text-cream shadow-lg transition-colors hover:bg-terradark"
         >
-          Speisekarte entdecken
+          Zur Speisekarte
         </a>
       </div>
     </section>

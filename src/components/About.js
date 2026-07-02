@@ -2,25 +2,26 @@ import siteData from "../data/site-data.json";
 
 export default function About() {
   const { restaurant, images } = siteData;
-  const bandImage = images.interior || images.food || images.exterior;
+  const sideImage = images.interior || images.food || images.exterior;
 
   return (
-    <>
-      <section id="ueber-uns" className="mx-auto max-w-4xl px-4 py-24 text-center">
-        <p className="text-sm uppercase tracking-[0.3em] text-terra">Unsere Geschichte</p>
-        <h2 className="mt-3 font-display text-4xl font-bold sm:text-5xl">Über uns</h2>
-        <p className="mt-8 whitespace-pre-line text-lg leading-relaxed text-coffee/80">
-          {restaurant.about}
-        </p>
-      </section>
-
-      {bandImage && (
-        <img
-          src={bandImage}
-          alt={`${restaurant.name} — Einblick`}
-          className="h-[60vh] w-full object-cover"
-        />
-      )}
-    </>
+    <section id="ueber-uns" className="mx-auto max-w-5xl px-4 py-20">
+      <div className={`grid items-center gap-10 ${sideImage ? "md:grid-cols-2" : ""}`}>
+        <div>
+          <h2 className="font-display text-3xl font-bold sm:text-4xl">Über uns</h2>
+          <div className="mt-2 h-1 w-16 rounded bg-terra" />
+          <p className="mt-6 whitespace-pre-line leading-relaxed text-coffee/85">
+            {restaurant.about}
+          </p>
+        </div>
+        {sideImage && (
+          <img
+            src={sideImage}
+            alt={`${restaurant.name} — Einblick`}
+            className="h-80 w-full rounded-2xl object-cover shadow-xl"
+          />
+        )}
+      </div>
+    </section>
   );
 }

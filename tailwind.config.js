@@ -1,15 +1,14 @@
 /** @type {import('tailwindcss').Config} */
-// basic_05 — Bildstark & Gastronomisch: beyaz zemin, bordo vurgu, dev görseller
 module.exports = {
   content: ["./src/**/*.{js,jsx}"],
   theme: {
     extend: {
       colors: {
-        cream: "#ffffff",
-        sand: "#f5f5f4",
-        coffee: "#1c1917",
-        terra: "#9f1239",
-        terradark: "#881337",
+        cream: "#faf6f0",
+        sand: "#f0e6d8",
+        coffee: "#3d2c1e",
+        terra: "#b5542d",
+        terradark: "#94431f",
       },
       fontFamily: {
         display: ["var(--font-display)", "serif"],
